@@ -1,0 +1,15 @@
+{
+  "name": "simple-piano-test",
+  "version": "1.0.0",
+  "description": "#installation 'npm init -y' 'npm i simple-piano --save'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-piano": "^1.0.0"
+  }
+}
