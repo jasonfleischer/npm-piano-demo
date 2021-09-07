@@ -6,7 +6,8 @@
 
 Demo for [simple-piano](https://www.npmjs.com/package/simple-piano) node package
 
-
+See the demo here:
+https://jasonfleischer.github.io/simple-piano-demo/
 
 #requires 
 parcel which can be insatlled with 'npm i parcel --g'
