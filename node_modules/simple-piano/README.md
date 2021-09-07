@@ -1,7 +1,22 @@
 # simple-piano
 
-under construction
+## Description
+!!!package is under construction/develoment!!!
 
+## Demo
 
-#installation
+## Screenshots
+
+## Installation
 'npm i simple-piano --save'
+
+
+### Html
+
+### JS
+
+
+## Usage
+
+
+

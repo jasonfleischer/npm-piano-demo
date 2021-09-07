@@ -1,0 +1,1 @@
+import{simplePiano}from"simple-piano";simplePiano({range:"10",interactive:false,width:700});function drawNote(){}function drawChord(){}function drawScale(){alert("TODO")}
