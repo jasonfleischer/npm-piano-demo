@@ -1,0 +1,25 @@
+{
+  "name": "simple-log-kit",
+  "version": "1.0.0",
+  "description": "simple JS logging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonfleischer/simple-log-kit.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "kit",
+    "console"
+  ],
+  "author": "Jason Fleischer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonfleischer/simple-log-kit/issues"
+  },
+  "homepage": "https://github.com/jasonfleischer/simple-log-kit#readme"
+}

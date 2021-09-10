@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "simple-log-kit": "^1.0.0",
     "simple-piano": "^1.0.0"
   }
 }
