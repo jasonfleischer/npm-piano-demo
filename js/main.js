@@ -7,9 +7,6 @@ simplePiano({
 	width: 700
 });
 
-log("test")
-
-
 document.getElementById("note_button").onclick = function() { 
 	logE("tests")
 };
