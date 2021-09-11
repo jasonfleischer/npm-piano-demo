@@ -13,7 +13,7 @@
 
 CWD=`pwd`
 
-uglifyjs js/main.js -o js/bundle.js
+uglifyjs node_modules/simple-piano/index.js node_modules/simple-log-kit/index.js js/main.js -o js/bundle.js
 browserify js/bundle.js -o js/bundle.js
 
 git add *; git commit -m 'update'; git push;
