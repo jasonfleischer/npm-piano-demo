@@ -6,7 +6,12 @@ simplePiano({
 	width: 700
 })*/
 
-import {log, logE} from "./module.js"
+var LOG_NON_ERROR_MESSAGES = true;
 
-log("test")
-logE("tests")
+export const log = (msg) => {
+	if (LOG_NON_ERROR_MESSAGES)
+		console.log(msg);
+};
+export const logE = (msg) => {
+	console.log("%c ERROR: " + msg, "background: red; color: white; display: block;");
+};

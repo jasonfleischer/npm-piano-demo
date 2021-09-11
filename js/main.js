@@ -1,5 +1,10 @@
 //const = require("logKit")
 
+import {log, logE} from "./module.js"
+
+log("test")
+logE("tests")
+
 function drawNote() {
 	//logE('test')
 }
