@@ -1,4 +1,4 @@
-import { simplePiano } from 'simple-piano';
+import { simplePiano } from './simple-piano';
 
 simplePiano({
 	range: '10',
