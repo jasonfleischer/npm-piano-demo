@@ -1,4 +1,4 @@
-import {log, logE} from "../node_modules/simple-log-kit/index.js" //"../node_modules/simple-piano/index.js"
+import {log, logE} from "./node_modules/simple-log-kit/index.js" //"../node_modules/simple-piano/index.js"
 
 /*import { simplePiano } from './simple-piano.js';
 
