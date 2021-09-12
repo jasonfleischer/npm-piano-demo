@@ -1,7 +1,7 @@
 
 //import { simplePiano } from "../node_modules/simple-piano/index.js";
 
-const { log, logE } = require("../node_modules/simple-log-kit/index")
+const { log, logE, turnOffNonErrorLogs } = require("../node_modules/simple-log-kit/index")
 
 log("tyvty")
 logE("tests 568767")
