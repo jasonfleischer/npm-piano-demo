@@ -1,11 +1,20 @@
-import {log, logE} from "../node_modules/simple-log-kit/index.js";
-import { simplePiano } from "../node_modules/simple-piano/index.js";
 
-simplePiano({
+//import { simplePiano } from "../node_modules/simple-piano/index.js";
+
+const { log, logE } = require("../node_modules/simple-log-kit/index")
+
+log("tyvty")
+logE("tests 568767")
+
+turnOffNonErrorLogs()
+log("? ")
+
+
+/*simplePiano({
 	range: '10',
 	interactive: false,
 	width: 700
-});
+});*/
 
 document.getElementById("note_button").onclick = function() { 
 	logE("tests")
