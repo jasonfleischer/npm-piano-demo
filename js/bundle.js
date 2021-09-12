@@ -12,14 +12,7 @@ exports.logE = (msg) => {
 	console.log("%c ERROR: " + msg, "background: red; color: white; display: block;");
 };
 
-
-// common wrapper
-/*exports.log = {}
-log.e = function(){
-	console.log("%c ERROR: " + msg, "background: red; color: white; display: block;");
-}
-log.i = function(){
-	if (LOG_NON_ERROR_MESSAGES)
-		console.log(msg);
-}*/
+exports.turnOffNonErrorLogs = () => {
+	LOG_NON_ERROR_MESSAGES = false
+};
 },{}]},{},[1]);
