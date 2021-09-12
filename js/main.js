@@ -3,8 +3,8 @@
 
 const { log, logE, turnOffNonErrorLogs } = require("../node_modules/simple-log-kit/index")
 
-log("tyvty")
-logE("tests 568767")
+log("This is a normal log message")
+logE("This is an error log message")
 
 turnOffNonErrorLogs()
 log("? ")
