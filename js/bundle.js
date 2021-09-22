@@ -290,7 +290,7 @@ function piano(options) {
 		piano_view.resize(options.width)
 	}) 
 }
-module.exports.piano = piano;
+module.exports = piano;
 
 
 },{}]},{},[1]);

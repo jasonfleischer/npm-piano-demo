@@ -1,6 +1,7 @@
 
 const piano = require("@jasonfleischer/piano")
 const log = require("@jasonfleischer/log")
+
 piano({
 	range: '10',
 	interactive: false,
