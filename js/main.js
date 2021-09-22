@@ -1,22 +1,22 @@
 
 const piano = require("@jasonfleischer/piano")
-
-piano({
+const log = require("@jasonfleischer/log")
+/*piano({
 	range: '10',
 	interactive: false,
 	width: 700
-});
+});*/
 
 document.getElementById("note_button").onclick = function() { 
-	logE("tests")
+	log.e("tests")
 };
 
 document.getElementById("chord_button").onclick = function() {
-	logE('testhvhgvhg')
+	log.e('testhvhgvhg')
 }
 
 document.getElementById("scale_button").onclick = function() {
-	log('testhgbhgv 2')
+	log.i('testhgbhgv 2')
 }
 
 document.getElementById("clear_button").onclick = function() {

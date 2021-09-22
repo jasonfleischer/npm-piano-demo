@@ -1,6 +1,25 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const piano=require("@jasonfleischer/piano");piano({range:"10",interactive:false,width:700});document.getElementById("note_button").onclick=function(){logE("tests")};document.getElementById("chord_button").onclick=function(){logE("testhvhgvhg")};document.getElementById("scale_button").onclick=function(){log("testhgbhgv 2")};document.getElementById("clear_button").onclick=function(){alert("TODO")};
-},{"@jasonfleischer/piano":2}],2:[function(require,module,exports){
+const piano=require("@jasonfleischer/piano");const log=require("@jasonfleischer/log");document.getElementById("note_button").onclick=function(){log.e("tests")};document.getElementById("chord_button").onclick=function(){log.e("testhvhgvhg")};document.getElementById("scale_button").onclick=function(){log.i("testhgbhgv 2")};document.getElementById("clear_button").onclick=function(){alert("TODO")};
+},{"@jasonfleischer/log":2,"@jasonfleischer/piano":3}],2:[function(require,module,exports){
+var LOG_NON_ERROR_MESSAGES = true;
+const log = {};
+
+log.i = function(msg) {
+	if (LOG_NON_ERROR_MESSAGES)
+		console.log(msg);
+};
+
+log.e = function(msg) {
+	console.log("%c ERROR: " + msg, "background: red; color: white; display: block;");
+};
+
+log.turnOffNonErrorLogs = function() {
+	LOG_NON_ERROR_MESSAGES = false;
+};
+
+module.exports = log;
+
+},{}],3:[function(require,module,exports){
 
 
 var piano_view = {
