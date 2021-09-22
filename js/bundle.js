@@ -213,7 +213,7 @@ function init(){
 }
 
 
-module.exports = {Note, NoteName, init};
+module.exports = {Note, NoteName, init, all_notes};
 
 
 },{}],4:[function(require,module,exports){
@@ -304,7 +304,7 @@ piano_view.draw_background = function(){
 	let number_of_black_keys = 0;
 
 	for(i = piano_view.min_note_value; i <= piano_view.max_note_value; i++){
-		var note = all_notes[i];
+		var note = musicKit.all_notes[i];
 		if(!note.note_name.is_sharp_or_flat){
 			number_of_white_keys++;
 		} else {
@@ -320,7 +320,7 @@ piano_view.draw_background = function(){
 	var i;
 	var x = piano_view.BORDER_WIDTH + (piano_view.WIDTH - ((white_key_width + piano_view.BORDER_WIDTH ) * number_of_white_keys))/2;//.WIDTH - ((number_of_white_keys+1)*piano_view.BORDER_WIDTH) )/2;
 	for(i = piano_view.min_note_value; i <= piano_view.max_note_value; i++){
-		var note = all_notes[i];
+		var note = musicKit.all_notes[i];
 		if(!note.note_name.is_sharp_or_flat){
 
 			let key = new PianoKey(x, piano_view.BORDER_WIDTH, 
