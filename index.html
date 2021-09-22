@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Simple Piano Demo</title>
+	<title>@jasonfleischer/piano Demo</title>
 	<meta charset="utf-8">
 	<meta name="author" content="Jason Fleischer">
-	<meta name="description" content="Demo for simple-piano node package">
+	<meta name="description" content="Demo for @jasonfleischer/piano node package">
 	<meta name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no'>
 </head>
 <body>
-	<h1>Demo for node package: <a href="https://www.npmjs.com/package/simple-piano">simple-piano</a></h1>
+	<h1>Demo for node package: <a href="https://www.npmjs.com/package/@jasonfleischer/piano">@jasonfleischer/piano</a></h1>
 	
-	<div class="simple-piano"></div>
-
+	<div class="piano"></div>
+	<!--<div class="piano"></div>-->
 
 
 	<br/>
 	<button id="note_button">Draw Note: A2</button>
-	<button onclick="drawChord()">Draw Chord: C</button>
-	<button onclick="drawScale()">Draw Scale</button>
-	<button>Clear</button>
+	<button id="chord_button">Draw Chord: C</button>
+	<button id="scale_button">Draw Scale</button>
+	<button id="clear_button">Clear</button>
 	
-	<!--<div class="simple-piano"></div>-->
-
+	
 	<script src="js/bundle.js"></script>
 </body>
 </html>

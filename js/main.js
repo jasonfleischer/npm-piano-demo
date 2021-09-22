@@ -1,33 +1,24 @@
 
-//import { simplePiano } from "../node_modules/simple-piano/index.js";
+const piano = require("@jasonfleischer/piano")
 
-const { log, logE, turnOffNonErrorLogs } = require("../node_modules/simple-log-kit/index")
-
-log("This is a normal log message")
-logE("This is an error log message")
-
-turnOffNonErrorLogs()
-log("? ")
-
-
-/*simplePiano({
+piano({
 	range: '10',
 	interactive: false,
 	width: 700
-});*/
+});
 
 document.getElementById("note_button").onclick = function() { 
 	logE("tests")
 };
 
-function drawNote() {
+document.getElementById("chord_button").onclick = function() {
 	logE('testhvhgvhg')
 }
 
-function drawChord() {
+document.getElementById("scale_button").onclick = function() {
 	log('testhgbhgv 2')
 }
 
-function drawScale() {
+document.getElementById("clear_button").onclick = function() {
 	alert('TODO')
 }
