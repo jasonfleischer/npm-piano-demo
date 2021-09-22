@@ -1,11 +1,11 @@
 
 const piano = require("@jasonfleischer/piano")
 const log = require("@jasonfleischer/log")
-/*piano({
+piano({
 	range: '10',
 	interactive: false,
 	width: 700
-});*/
+});
 
 document.getElementById("note_button").onclick = function() { 
 	log.e("tests")
