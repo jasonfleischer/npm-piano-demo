@@ -15,7 +15,7 @@ document.getElementById("note_button").onclick = function() {
 };
 
 document.getElementById("chord_button").onclick = function() {
-	var chord = musicKit.Chord.Chord()
+	var chord = new musicKit.Chord.Chord()
 	log.e('test ' + musicKit.Chord.CHORD_TYPE.Major)
 
 	midiValue = 45
