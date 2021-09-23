@@ -10,7 +10,7 @@ piano.init({
 });
 
 document.getElementById("note_button").onclick = function() { 
-	midiValue = 75
+	midiValue = 45
 	piano.drawNote(midiValue);
 };
 
@@ -18,7 +18,7 @@ document.getElementById("chord_button").onclick = function() {
 	//var chord = new musicKit.Chord.Chord()
 	log.e('test ' + musicKit.Chord.CHORD_TYPE.Major)
 
-	midiValue = 45
+	midiValue = 60
 	piano.drawChord(midiValue)
 }
 
