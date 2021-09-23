@@ -1,6 +1,7 @@
 
 const piano = require("@jasonfleischer/piano")
 const log = require("@jasonfleischer/log")
+const musicKit = require("@jasonfleischer/music-model-kit");
 
 piano.init({
 	range: '10',
@@ -14,7 +15,7 @@ document.getElementById("note_button").onclick = function() {
 };
 
 document.getElementById("chord_button").onclick = function() {
-	log.e('testhvhgvhg')
+	log.e('testhvhgvhg' + )
 }
 
 document.getElementById("scale_button").onclick = function() {
