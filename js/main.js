@@ -15,7 +15,11 @@ document.getElementById("note_button").onclick = function() {
 };
 
 document.getElementById("chord_button").onclick = function() {
-	log.e('test ' + musicKit.chord.CHORD_TYPE.Major)
+	var chord = musicKit.Chord.Chord()
+	log.e('test ' + musicKit.Chord.CHORD_TYPE.Major)
+
+	midiValue = 45
+	piano.drawChord(midiValue)
 }
 
 document.getElementById("scale_button").onclick = function() {

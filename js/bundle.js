@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const piano=require("@jasonfleischer/piano");const log=require("@jasonfleischer/log");const musicKit=require("@jasonfleischer/music-model-kit");piano.init({range:"10",interactive:false,width:700});document.getElementById("note_button").onclick=function(){midiValue=75;piano.drawNote(midiValue)};document.getElementById("chord_button").onclick=function(){log.e("test "+musicKit.chord.CHORD_TYPE.Major)};document.getElementById("scale_button").onclick=function(){log.i("testhgbhgv 2")};document.getElementById("clear_button").onclick=function(){piano.clear()};
+const piano=require("@jasonfleischer/piano");const log=require("@jasonfleischer/log");const musicKit=require("@jasonfleischer/music-model-kit");piano.init({range:"10",interactive:false,width:700});document.getElementById("note_button").onclick=function(){midiValue=75;piano.drawNote(midiValue)};document.getElementById("chord_button").onclick=function(){var chord=musicKit.Chord.Chord();log.e("test "+musicKit.Chord.CHORD_TYPE.Major);midiValue=45;piano.drawChord(midiValue)};document.getElementById("scale_button").onclick=function(){log.i("testhgbhgv 2")};document.getElementById("clear_button").onclick=function(){piano.clear()};
 },{"@jasonfleischer/log":2,"@jasonfleischer/music-model-kit":4,"@jasonfleischer/piano":5}],2:[function(require,module,exports){
 var LOG_NON_ERROR_MESSAGES = true;
 const log = {};
@@ -49,7 +49,7 @@ const ALL_CHORD_TYPES = [CHORD_TYPE.Major, CHORD_TYPE.minor, CHORD_TYPE.Major7, 
 class Chord {
 
 
-  constructor(root_note, chord_type, play_type, inversion) {
+  constructor(root_note, chord_type = CHORD_TYPE.Major, play_type = CHORD_PLAY_TYPE.HARMONIC, inversion = CHORD_INVERSION_TYPE.Root) {
     this.delay_in_ms = 500;
     this.name = root_note.note_name.name + " " + chord_type;
     this.inversion = inversion
@@ -228,11 +228,11 @@ function generate_chord_with_note(note_name){
 }
 
 
-module.exports = {Chord, CHORD_TYPE, CHORD_INVERSION_TYPE} 
+module.exports = {Chord, CHORD_TYPE, CHORD_INVERSION_TYPE, CHORD_PLAY_TYPE} 
 
 
 },{}],4:[function(require,module,exports){
-const chord = require("./chord.js");
+const Chord = require("./chord.js");
 //const note = require("./note.js");
 
 class Note {
@@ -428,7 +428,7 @@ function init(){
 }
 
 
-module.exports = {Note, NoteName, init, all_notes, chord};
+module.exports = {Note, NoteName, init, all_notes, Chord};
 
 
 },{"./chord.js":3}],5:[function(require,module,exports){
@@ -715,8 +715,8 @@ piano.drawNote = function(midiValue) {
 	piano_view.drawNote(musicKit.all_notes[midiValue]);
 }
 
-piano.drawChord = function(chord) {
-	piano_view.drawNote(chord);
+piano.drawChord = function(midiValue) {
+	piano_view.drawChord(musicKit.Chord.Chord(musicKit.all_notes[midiValue]));
 }
 
 piano.clear = function(midiValue) {
