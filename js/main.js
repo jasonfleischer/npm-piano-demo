@@ -9,8 +9,7 @@ piano.init({
 });
 
 document.getElementById("note_button").onclick = function() { 
-	log.e("tests")
-	midiValue = 60
+	midiValue = 75
 	piano.drawNote(midiValue);
 };
 
@@ -23,6 +22,5 @@ document.getElementById("scale_button").onclick = function() {
 }
 
 document.getElementById("clear_button").onclick = function() {
-	alert('TODO')
 	piano.clear();
 }
