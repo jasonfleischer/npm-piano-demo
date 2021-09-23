@@ -49,7 +49,7 @@ const ALL_CHORD_TYPES = [CHORD_TYPE.Major, CHORD_TYPE.minor, CHORD_TYPE.Major7, 
 class Chord {
 
 
-  constructor(root_note, chord_type = CHORD_TYPE.Major, play_type = CHORD_PLAY_TYPE.HARMONIC, inversion = CHORD_INVERSION_TYPE.Root) {
+  constructor(root_note, all_notes, chord_type = CHORD_TYPE.Major, play_type = CHORD_PLAY_TYPE.HARMONIC, inversion = CHORD_INVERSION_TYPE.Root) {
     this.delay_in_ms = 500;
     this.name = root_note.note_name.name + " " + chord_type;
     this.inversion = inversion
@@ -716,7 +716,7 @@ piano.drawNote = function(midiValue) {
 }
 
 piano.drawChord = function(midiValue) {
-	piano_view.drawChord(new musicKit.Chord.Chord(musicKit.all_notes[midiValue]));
+	piano_view.drawChord(new musicKit.Chord.Chord(musicKit.all_notes[midiValue], musicKit.all_notes));
 }
 
 piano.clear = function(midiValue) {
