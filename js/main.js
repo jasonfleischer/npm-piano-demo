@@ -24,4 +24,5 @@ document.getElementById("scale_button").onclick = function() {
 
 document.getElementById("clear_button").onclick = function() {
 	alert('TODO')
+	piano.clear();
 }
