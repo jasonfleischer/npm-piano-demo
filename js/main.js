@@ -10,20 +10,17 @@ piano.init({
 });
 
 document.getElementById("note_button").onclick = function() { 
-	midiValue = 45
+	midiValue = 45 // A2
 	piano.drawNote(midiValue);
 };
 
 document.getElementById("chord_button").onclick = function() {
-	//var chord = new musicKit.Chord.Chord()
-	log.e('test ' + musicKit.Chord.CHORD_TYPE.Major)
-
-	midiValue = 60
+	midiValue = 60 // C4
 	piano.drawChord(midiValue)
 }
 
 document.getElementById("scale_button").onclick = function() {
-	log.i('testhgbhgv 2')
+	log.i('todo')
 }
 
 document.getElementById("clear_button").onclick = function() {
