@@ -2,7 +2,7 @@
 const piano = require("@jasonfleischer/piano")
 const log = require("@jasonfleischer/log")
 
-piano({
+piano.init({
 	range: '10',
 	interactive: false,
 	width: 700
@@ -10,6 +10,8 @@ piano({
 
 document.getElementById("note_button").onclick = function() { 
 	log.e("tests")
+	midiValue = 60
+	piano.drawNote(midiValue);
 };
 
 document.getElementById("chord_button").onclick = function() {
