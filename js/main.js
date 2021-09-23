@@ -15,7 +15,7 @@ document.getElementById("note_button").onclick = function() {
 };
 
 document.getElementById("chord_button").onclick = function() {
-	log.e('test ' + musicKit.chord.CHORD_TYPE)
+	log.e('test ' + musicKit.chord.CHORD_TYPE.Major)
 }
 
 document.getElementById("scale_button").onclick = function() {
