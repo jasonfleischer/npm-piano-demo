@@ -525,6 +525,8 @@ module.exports = piano;
 
 
 },{"./lib/piano_view.js":7,"@jasonfleischer/music-model-kit":3}],7:[function(require,module,exports){
+const musicKit = require("@jasonfleischer/music-model-kit");
+
 var piano_view = {
 
 	WIDTH: 1000,
@@ -732,4 +734,4 @@ piano_view.drawChord = function(chord){
 }
 
 module.exports = piano_view
-},{}]},{},[1]);
+},{"@jasonfleischer/music-model-kit":3}]},{},[1]);
