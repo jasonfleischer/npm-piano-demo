@@ -54,7 +54,7 @@ function init(){
 }
 
 
-module.exports = {init, Note, Chord};
+module.exports = {init, Note, Chord, all_notes};
 
 
 },{"./lib/chord.js":4,"./lib/note.js":5}],4:[function(require,module,exports){
