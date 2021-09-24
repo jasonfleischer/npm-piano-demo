@@ -20,9 +20,8 @@ log.turnOffNonErrorLogs = function() {
 module.exports = log;
 
 },{}],3:[function(require,module,exports){
-const Chord = require("./lib/chord.js");
 const Note = require("./lib/note.js");
-
+const Chord = require("./lib/chord.js");
 
 
 var all_notes = [];
@@ -55,7 +54,7 @@ function init(){
 }
 
 
-module.exports = {Note, NoteName, init, all_notes, Chord};
+module.exports = {init, Note, Chord};
 
 
 },{"./lib/chord.js":4,"./lib/note.js":5}],4:[function(require,module,exports){
