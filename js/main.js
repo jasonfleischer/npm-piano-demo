@@ -34,7 +34,7 @@ let interactivePianoView = pianoKit.buildView({
 		max: 60  // midi value = C4
 	},
 	interactive: true,
-	width: 320
+	width: 325
 });
 
 
