@@ -1,7 +1,7 @@
 
 const pianoKit = require("@jasonfleischer/piano")
 //const log = require("@jasonfleischer/log")
-//const musicKit = require("@jasonfleischer/music-model-kit");
+const musicKit = require("@jasonfleischer/music-model-kit");
 
 let pianoView = pianoKit.buildView({
 	id: 'display_piano',
@@ -11,13 +11,16 @@ let pianoView = pianoKit.buildView({
 });
 
 document.getElementById("note_button").onclick = function() { 
-	midiValue = 45 // A2
-	piano.drawNote(midiValue);
+	let midiValue = 45; // A2
+	let note = musicKit.all_notes[midiValue];
+	pianoView.drawNote(note);
 };
 
 document.getElementById("chord_button").onclick = function() {
-	midiValue = 60 // C4
-	piano.drawChord(midiValue)
+	let midiValue = 60 // C4
+	let note = musicKit.all_notes[midiValue];
+	let chord = musicKit.all_notes[midiValue];
+	pianoView.drawChord(new musicKit.Chord(note, musicKit.all_notes))
 }
 
 document.getElementById("scale_button").onclick = function() {
@@ -25,7 +28,7 @@ document.getElementById("scale_button").onclick = function() {
 }
 
 document.getElementById("clear_button").onclick = function() {
-	piano.clear();
+	pianoView.clear();
 }
 
 let interactivePianoView = pianoKit.buildView({
