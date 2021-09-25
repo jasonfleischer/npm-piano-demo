@@ -5,8 +5,9 @@ const musicKit = require("@jasonfleischer/music-model-kit");
 musicKit.init();
 
 let pianoView = pianoKit.buildView({
-	id: 'display_piano',
-	width: 700
+	id: 'display_piano'
+	//,
+	//width: 700
 });
 
 document.getElementById("note_button").onclick = function() { 
