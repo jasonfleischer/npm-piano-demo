@@ -7,7 +7,7 @@ let pianoView = pianoKit.buildView({
 	id: 'display_piano',
 	range: '10',
 	interactive: false,
-	width: 700
+	width: 500
 });
 
 document.getElementById("note_button").onclick = function() { 
@@ -32,5 +32,5 @@ let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
 	range: '10',
 	interactive: true,
-	width: 500
+	width: 700
 });
