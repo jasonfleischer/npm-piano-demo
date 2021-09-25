@@ -1,9 +1,9 @@
 
-const piano = require("@jasonfleischer/piano")
+const pianoKit = require("@jasonfleischer/piano")
 //const log = require("@jasonfleischer/log")
 //const musicKit = require("@jasonfleischer/music-model-kit");
 
-piano.init({
+let pianoView = pianoKit.buildView({
 	id: 'display_piano',
 	range: '10',
 	interactive: false,
