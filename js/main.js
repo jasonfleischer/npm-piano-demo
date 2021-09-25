@@ -36,5 +36,5 @@ let interactivePianoView = pianoKit.buildView({
 		max: 60
 	},
 	interactive: true,
-	width: 700
+	width: 600
 });
