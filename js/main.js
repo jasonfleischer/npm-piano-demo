@@ -33,7 +33,7 @@ document.getElementById("clear_button").onclick = function() {
 let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
 	range: {
-		min: 47,
+		min: 48,
 		max: 60
 	},
 	interactive: true,
