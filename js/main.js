@@ -14,18 +14,15 @@ document.getElementById("note_button").onclick = function() {
 	let note = musicKit.all_notes[midiValue];
 	pianoView.drawNote(note);
 };
-
 document.getElementById("chord_button").onclick = function() {
 	let midiValue = 60 // C4
 	let note = musicKit.all_notes[midiValue];
 	let chord = musicKit.all_notes[midiValue];
-	pianoView.drawChord(new musicKit.Chord(note, musicKit.all_notes))
+	pianoView.drawChord(new musicKit.Chord(note, musicKit.Chord.TYPE.Major))
 }
-
 document.getElementById("scale_button").onclick = function() {
 	alert('todo')
 }
-
 document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
 }
@@ -33,9 +30,12 @@ document.getElementById("clear_button").onclick = function() {
 let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
 	range: {
-		min: 48,
-		max: 60
+		min: 48, // midi value = C3
+		max: 60  // midi value = C4
 	},
 	interactive: true,
 	width: 300
 });
+
+
+// interactivePianoView.listen
