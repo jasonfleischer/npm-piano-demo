@@ -28,9 +28,9 @@ document.getElementById("clear_button").onclick = function() {
 	piano.clear();
 }
 
-piano.init({
+let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
 	range: '10',
 	interactive: true,
-	width: 700
+	width: 500
 });
