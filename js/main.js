@@ -1,9 +1,10 @@
 
 const piano = require("@jasonfleischer/piano")
-const log = require("@jasonfleischer/log")
-const musicKit = require("@jasonfleischer/music-model-kit");
+//const log = require("@jasonfleischer/log")
+//const musicKit = require("@jasonfleischer/music-model-kit");
 
 piano.init({
+	id: 'display_piano',
 	range: '10',
 	interactive: false,
 	width: 700
@@ -20,9 +21,16 @@ document.getElementById("chord_button").onclick = function() {
 }
 
 document.getElementById("scale_button").onclick = function() {
-	log.i('todo')
+	alert('todo')
 }
 
 document.getElementById("clear_button").onclick = function() {
 	piano.clear();
 }
+
+piano.init({
+	id: 'interactive_piano',
+	range: '10',
+	interactive: true,
+	width: 700
+});
