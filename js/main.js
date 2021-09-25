@@ -4,10 +4,7 @@ const pianoKit = require("@jasonfleischer/piano")
 const musicKit = require("@jasonfleischer/music-model-kit");
 
 let pianoView = pianoKit.buildView({
-	id: 'display_piano',
-	range: '10',
-	interactive: false,
-	width: 500
+	id: 'display_piano'
 });
 
 document.getElementById("note_button").onclick = function() { 
@@ -33,7 +30,10 @@ document.getElementById("clear_button").onclick = function() {
 
 let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
-	range: '10',
+	range: {
+		min: 45,
+		max: 60
+	},
 	interactive: true,
 	width: 700
 });
