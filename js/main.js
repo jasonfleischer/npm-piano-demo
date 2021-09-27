@@ -21,7 +21,6 @@ document.getElementById("chord_button").onclick = function() {
 	pianoView.drawChord(chord);
 }
 document.getElementById("scale_button").onclick = function() {
-	alert('todo')
 	let midiValue = 60 // C
 	let note = musicKit.all_notes[midiValue];
 	let scale = new musicKit.Chord(note, musicKit.Scale.TYPE.minor);
