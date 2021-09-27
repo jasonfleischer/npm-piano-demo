@@ -4,7 +4,7 @@ const pianoKit = require("@jasonfleischer/piano")
 const musicKit = require("@jasonfleischer/music-model-kit");
 musicKit.init();
 
-let pianoView = pianoKit.buildView({
+let pianoView = pianoKit.buildPianoView({
 	id: 'display_piano'
 	,width: 700
 });
@@ -31,7 +31,7 @@ document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
 }
 
-let interactivePianoView = pianoKit.buildView({
+let interactivePianoView = pianoKit.buildPianoView({
 	id: 'interactive_piano',
 	range: {
 		min: 60, // midi value = C3
