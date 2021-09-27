@@ -31,15 +31,17 @@ document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
 }
 
-let interactivePianoView = pianoKit.buildPianoView({
-	id: 'interactive_piano',
-	range: {
-		min: 60, // midi value = C3
-		max: 72  // midi value = C4
-	},
-	interactive: true,
-	width: 325
-});
+{
+	let interactivePianoView = pianoKit.buildPianoView({
+		id: 'interactive_piano',
+		range: {
+			min: 60, // midi value = C3
+			max: 72  // midi value = C4
+		},
+		interactive: true,
+		width: 325
+	});
+}
 
 
 // interactivePianoView.listen
