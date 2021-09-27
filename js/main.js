@@ -34,7 +34,7 @@ let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
 	range: {
 		min: 60, // midi value = C3
-		max: 73  // midi value = C4
+		max: 72  // midi value = C4
 	},
 	interactive: true,
 	width: 325
