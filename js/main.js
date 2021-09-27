@@ -17,11 +17,15 @@ document.getElementById("note_button").onclick = function() {
 document.getElementById("chord_button").onclick = function() {
 	let midiValue = 60 // C4
 	let note = musicKit.all_notes[midiValue];
-	let chord = musicKit.all_notes[midiValue];
-	pianoView.drawChord(new musicKit.Chord(note, musicKit.Chord.TYPE.minor))
+	let chord = new musicKit.Chord(note, musicKit.Chord.TYPE.minor);
+	pianoView.drawChord(chord);
 }
 document.getElementById("scale_button").onclick = function() {
 	alert('todo')
+	let midiValue = 60 // C
+	let note = musicKit.all_notes[midiValue];
+	let scale = new musicKit.Chord(note, musicKit.Scale.TYPE.minor);
+	pianoView.drawScale(scale);
 }
 document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
