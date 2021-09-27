@@ -30,7 +30,7 @@ document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
 }
 
-let interactivePianoView = pianoKit.buildView({
+/*let interactivePianoView = pianoKit.buildView({
 	id: 'interactive_piano',
 	range: {
 		min: 60, // midi value = C3
@@ -38,7 +38,7 @@ let interactivePianoView = pianoKit.buildView({
 	},
 	interactive: true,
 	width: 325
-});
+});*/
 
 
 // interactivePianoView.listen
