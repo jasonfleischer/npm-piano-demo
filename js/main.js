@@ -23,7 +23,7 @@ document.getElementById("chord_button").onclick = function() {
 document.getElementById("scale_button").onclick = function() {
 	let midiValue = 60 // C
 	let note = musicKit.all_notes[midiValue];
-	let scale = new musicKit.Scale(note, musicKit.Scale.TYPE.minor);
+	let scale = new musicKit.Scale(note, musicKit.Scale.TYPE.Aeolian);
 	pianoView.drawScale(scale);
 }
 document.getElementById("clear_button").onclick = function() {
