@@ -8,6 +8,10 @@ musicKit.init();
 	let pianoView = new pianoKit.PianoBuilder({
 		id: 'display_piano'
 		,width: 700
+		,range: {
+			min: 21, // midi value = C3
+			max: 108  // midi value = C4
+		}
 	});
 
 	document.getElementById("note_button").onclick = function() { 
