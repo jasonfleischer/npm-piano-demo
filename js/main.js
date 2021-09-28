@@ -10,7 +10,7 @@ musicKit.init();
 		,width: 700
 	});
 
-	var midiValue = 107;
+	var midiValue = 60;
 	document.getElementById("note_button").onclick = function() { 
 		//let midiValue = 45; // A2
 		midiValue++;
