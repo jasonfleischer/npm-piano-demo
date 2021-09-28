@@ -4,7 +4,7 @@ const musicKit = require("@jasonfleischer/music-model-kit");
 
 musicKit.init();
 
-{
+
 	let pianoView = new pianoKit.PianoBuilder({
 		id: 'display_piano'
 		,width: 700
@@ -33,9 +33,9 @@ musicKit.init();
 	document.getElementById("clear_button").onclick = function() {
 		pianoView.clear();
 	}
-}
 
-{
+
+
 	let interactivePianoView = new pianoKit.PianoBuilder({
 		id: 'interactive_piano',
 		range: {
@@ -45,7 +45,7 @@ musicKit.init();
 		interactive: true,
 		width: 325
 	});
-}
+
 
 
 // interactivePianoView.listen
