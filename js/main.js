@@ -1,7 +1,7 @@
 
 const pianoKit = require("@jasonfleischer/piano")
-//const log = require("@jasonfleischer/log")
 const musicKit = require("@jasonfleischer/music-model-kit");
+
 musicKit.init();
 
 {
