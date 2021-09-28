@@ -10,22 +10,20 @@ musicKit.init();
 		,width: 700
 	});
 
-	var midiValue = 60;
 	document.getElementById("note_button").onclick = function() { 
-		//let midiValue = 45; // A2
-		midiValue++;
+		let midiValue = 45; // A2
 		let note = musicKit.all_notes[midiValue];
 		pianoView.clear();
 		pianoView.drawNote(note);
 	};
 	document.getElementById("chord_button").onclick = function() {
-		//let midiValue = 60 // C4
+		let midiValue = 60 // C4
 		let note = musicKit.all_notes[midiValue];
 		let chord = new musicKit.Chord(note, musicKit.Chord.TYPE.minor);
 		pianoView.drawChord(chord);
 	}
 	document.getElementById("scale_button").onclick = function() {
-		//let midiValue = 62 // D
+		let midiValue = 62 // D
 		let note = musicKit.all_notes[midiValue];
 		let scale = new musicKit.Scale(note, musicKit.Scale.TYPE.Aeolian);
 		pianoView.drawScale(scale);
