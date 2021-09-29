@@ -40,8 +40,8 @@ musicKit.init();
 			min: 60, // midi value = C3
 			max: 72  // midi value = C4
 		},
-		interactive: true,
-		width: 325
+		interactive: true//,
+		//width: 325
 	});
 
 
