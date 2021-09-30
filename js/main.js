@@ -48,9 +48,14 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 			interactivePianoView.clearNote(note);
 		}
 	},
-	onHover: function(note) {
+	onHover: function(note, entered) {
+
 		log.e(note.to_string());
-		interactivePianoView.drawNoteWithColor(note, "#ddd");
+		if(entered) {
+			interactivePianoView.drawNoteWithColor(note, "#ddd");
+		} else {
+			interactivePianoView.clearNote(note);
+		}
 	}
 });
 
