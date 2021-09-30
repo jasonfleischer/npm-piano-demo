@@ -41,11 +41,14 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 		max: 72  // midi value = C4
 	},
 	width: 325,
-	onClick: function(note) {
-		log.e("found key " + note.to_string());
-		interactivePianoView.drawNote(note);
+	onClick: function(note, isOn) {
+		if(isOn) {
+			interactivePianoView.clear();
+		} else {
+			interactivePianoView.drawNote(note);
+		}
 	},
-	onHover: function(key) {
+	onHover: function(note, isOn) {
 
 	}
 });
