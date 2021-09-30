@@ -49,6 +49,7 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 		}
 	},
 	onHover: function(note) {
+		log.e(note.to_string());
 		interactivePianoView.drawNoteWithColor(note, "#eee");
 	}
 });
