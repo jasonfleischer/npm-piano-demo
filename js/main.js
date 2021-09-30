@@ -45,7 +45,7 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 		if(isOn) {
 			interactivePianoView.drawNote(note);
 		} else {
-			interactivePianoView.clear();
+			interactivePianoView.clearNote(note);
 		}
 	},
 	onHover: function(note, isOn) {
