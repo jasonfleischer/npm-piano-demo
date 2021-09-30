@@ -43,7 +43,7 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 	width: 325,
 	onClick: function(note) {
 		log.e("found key " + note.to_string());
-		pianoView.drawNote(note);
+		interactivePianoView.drawNote(note);
 	},
 	onHover: function(key) {
 
