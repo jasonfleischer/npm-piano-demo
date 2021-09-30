@@ -48,8 +48,8 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 			interactivePianoView.clearNote(note);
 		}
 	},
-	onHover: function(note, isOn) {
-
+	onHover: function(note) {
+		interactivePianoView.drawNoteWithColor(note, "#eee");
 	}
 });
 
