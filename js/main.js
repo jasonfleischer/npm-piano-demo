@@ -1,10 +1,8 @@
-
 const pianoKit = require("@jasonfleischer/piano")
 const musicKit = require("@jasonfleischer/music-model-kit");
 const log = require("@jasonfleischer/log");
 
 musicKit.init();
-
 
 let pianoView = new pianoKit.PianoBuilder({
 	id: 'display_piano'
@@ -31,8 +29,6 @@ document.getElementById("scale_button").onclick = function() {
 document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
 }
-
-
 
 let interactivePianoView = new pianoKit.PianoBuilder({
 	id: 'interactive_piano',
