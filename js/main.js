@@ -51,3 +51,11 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 	hover: true
 });
 
+new musicKit.Midi(
+	function (midi_value, velocity) { // note on
+		interactivePianoView.drawNote(note);
+	},
+	function (midi_value, velocity) { // note off
+		interactivePianoView.clearNote(note);
+	});
+
