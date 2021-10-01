@@ -48,10 +48,12 @@ let interactivePianoView = new pianoKit.PianoBuilder({
 });
 
 new musicKit.Midi(
-	function (midi_value, velocity) { // note on
+	function (midiValue, velocity) { // note on
+		let note = musicKit.all_notes[midiValue];
 		interactivePianoView.drawNote(note);
 	},
-	function (midi_value, velocity) { // note off
+	function (midiValue, velocity) { // note off
+		let note = musicKit.all_notes[midiValue];
 		interactivePianoView.clearNote(note);
 	});
 
