@@ -11,7 +11,6 @@ let pianoView = pianoKit({
 document.getElementById("note_button").onclick = function() { 
 	let midiValue = 45; // A2
 	let note = musicKit.all_notes[midiValue];
-	pianoView.clear();
 	pianoView.drawNote(note);
 };
 document.getElementById("chord_button").onclick = function() {
