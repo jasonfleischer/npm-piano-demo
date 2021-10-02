@@ -4,7 +4,7 @@ const log = require("@jasonfleischer/log");
 
 musicKit.init();
 
-let pianoView = pianoKit.PianoBuilder({
+let pianoView = pianoKit({
 	id: 'display_piano'
 });
 
@@ -30,7 +30,7 @@ document.getElementById("clear_button").onclick = function() {
 	pianoView.clear();
 }
 
-let interactivePianoView = pianoKit.PianoBuilder({
+let interactivePianoView = pianoKit({
 	id: 'interactive_piano',
 	range: {
 		min: 60, // midi value = C3
