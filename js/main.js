@@ -5,7 +5,8 @@ const log = require("@jasonfleischer/log");
 musicKit.init();
 
 let pianoView = pianoKit({
-	id: 'display_piano'
+	id: 'display_piano',
+	width: 990,
 });
 
 document.getElementById("note_button").onclick = function() { 
