@@ -5,8 +5,7 @@ const log = require("@jasonfleischer/log");
 musicKit.init();
 
 let pianoView = pianoKit({
-	id: 'display_piano',
-	backgroundColor: '#00000000'
+	id: 'display_piano'
 });
 
 document.getElementById("note_button").onclick = function() { 
@@ -45,8 +44,7 @@ let interactivePianoView = pianoKit({
 			interactivePianoView.clearNote(note);
 		}
 	},
-	hover: true,
-	backgroundColor: '#00000000'
+	hover: true
 });
 
 new musicKit.MidiListener(
