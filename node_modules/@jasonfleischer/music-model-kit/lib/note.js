@@ -23,6 +23,13 @@ class Note {
 	isWithinRange(range) {
 		return this.midi_value >= range.min && this.midi_value <= range.max;
 	}
+
+	static getRandom(all_notes, range) {
+		function randomInteger(min, max) { // min and max included 
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+		return all_notes[randomInteger(range.min, range.max)];
+	}
 }
 
 Note.Name = class  {
@@ -158,5 +165,10 @@ Note.Name = class  {
 		}
 	}
 }
+
+Note.ALL_NOTE_NAME_TYPES = [new Note.Name(Note.Name.TYPE.C), new Note.Name(Note.Name.TYPE.C_sharp), new Note.Name(Note.Name.TYPE.D), 
+						new Note.Name(Note.Name.TYPE.D_sharp), new Note.Name(Note.Name.TYPE.E), new Note.Name(Note.Name.TYPE.F),
+						new Note.Name(Note.Name.TYPE.F_sharp), new Note.Name(Note.Name.TYPE.G), new Note.Name(Note.Name.TYPE.G_sharp),
+						new Note.Name(Note.Name.TYPE.A), new Note.Name(Note.Name.TYPE.A_sharp), new Note.Name(Note.Name.TYPE.B)];
 
 module.exports = Note;

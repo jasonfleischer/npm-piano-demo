@@ -2,7 +2,7 @@ const musicKit = require("@jasonfleischer/music-model-kit");
 const log = require("@jasonfleischer/log")
 
 class PianoView {
-	constructor(id = "piano_view_id", width = 1000, range = musicKit.piano_range, onClick, hover = false) {
+	constructor(id = "piano_view_id", width = 1000, range = musicKit.piano_range, onClick, hover = false, backgroundColor="#000") {
 
 	  	this.id = id;
 		this.BORDER_WIDTH = 1;
@@ -13,6 +13,7 @@ class PianoView {
 		this.number_of_black_keys = 0;
 		this.midi_value_to_piano_key_map = {};
 		this.hover = hover;
+		this.backgroundColor = backgroundColor;
 		var i;
 		for(i = this.min_midi_value; i <= this.max_midi_value; i++){
 			var note = musicKit.all_notes[i];
@@ -53,7 +54,7 @@ class PianoView {
 	    if(this.hover) {
 	    	this.black_keys_drawing_hover_canvas = this.buildCanvas(pianoView, "piano_black_keys_drawing_hover_canvas_"+this.id, width, height);
 	    }
-		pianoView.style.backgroundColor = "grey";
+		pianoView.style.backgroundColor = this.backgroundColor;
 		pianoView.style.position = "relative"
 		pianoView.style.width = width  + "px";
 		pianoView.style.height = height  + "px";
@@ -239,14 +240,15 @@ class PianoView {
 	drawInterval(interval){
 
 		var play_type = interval.play_type;
-		var first_note = (play_type == INTERVAL_PLAY_TYPE.ASCENDING) ? interval.lower_note : interval.higher_note;
+		let higher_note = interval.getHigherNote(musicKit.all_notes);
+		var first_note = (play_type == musicKit.Interval.PLAY_TYPE.ASCENDING) ? interval.lower_note : higher_note;
 
 		this.clear();
 		this.drawNoteWithColor(first_note);
 		setTimeout(() => {
-			var second_note = (play_type == INTERVAL_PLAY_TYPE.ASCENDING) ? interval.higher_note : interval.lower_note;
+			var second_note = (play_type == musicKit.Interval.PLAY_TYPE.ASCENDING) ? higher_note : interval.lower_note;
 			this.drawNoteWithColor(second_note);
-		}, (interval.play_type == INTERVAL_PLAY_TYPE.HARMONIC) ? 0 : interval.delay_in_ms);	
+		}, (interval.play_type == musicKit.Interval.PLAY_TYPE.HARMONIC) ? 0 : interval.delay_in_ms);	
 	}
 
 	drawChord(chord){

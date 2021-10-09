@@ -28,7 +28,7 @@ class Chord {
 
 		this.root_note = root_note;
 		this.delay_in_ms = 500;
-		this.name = root_note.note_name.name + " " + chord_type;
+		this.name = root_note.note_name.type + " " + chord_type;
 		this.inversion = inversion
 		this.type = chord_type
 		this.play_type = play_type
@@ -36,7 +36,7 @@ class Chord {
 		function replaceAll(str, find, replace) {
 			return str.replace(new RegExp(find, 'g'), replace);
 		}
-		this.file_name = root_note.note_name.file_name.concat(["audio/chords/"+ replaceAll(this.type.toLowerCase(),' ','_') +".mp3"]);
+		this.file_name = root_note.note_name.file_name.concat(["audio/chords/"+ replaceAll(replaceAll(this.type.toLowerCase(),' ','_'), '7', 'seventh') +".mp3"]);
 
 		switch(chord_type){
 		case Chord.TYPE.Major:
@@ -139,7 +139,7 @@ class Chord {
 	}
 
 	toString() {
-		return  "CHORD: " + this.name +", "+ this.structure + ", ", this.note_sequence;
+		return "CHORD: " + this.name +", "+ this.structure + ", ", this.note_sequence;
 	}
 
 	isWithinRange(range) {
@@ -165,53 +165,39 @@ class Chord {
 		}
 		return note_array;
 	}
-}
 
-const ALL_CHORD_TYPES = [Chord.TYPE.Major, Chord.TYPE.minor, Chord.TYPE.Major7, Chord.TYPE.minor7];
+	
+	static ALL_TYPES = [Chord.TYPE.Major, Chord.TYPE.minor, Chord.TYPE.Aug, Chord.TYPE.Dim,
+						Chord.TYPE.Major7, Chord.TYPE.minor7, Chord.TYPE.Dom7];
 
-function type_is_three_notes(chord_type) {
-	return chord_type == Chord.TYPE.Major || chord_type == Chord.TYPE.minor || chord_type == Chord.TYPE.Aug || chord_type == Chord.TYPE.Dim 
-}
+	static ALL_PLAY_TYPES = [Chord.PLAY_TYPE.HARMONIC, Chord.PLAY_TYPE.ARPEGGIATE];
 
-function generate_random_chord(min, max){
+	static generateRandom(all_notes, range, types = ALL_TYPES, play_types = ALL_PLAY_TYPES,
+							three_note_inversion_types = [Chord.INVERSION_TYPE.Root, Chord.INVERSION_TYPE.First, Chord.INVERSION_TYPE.Second], 
+							four_note_inversion_types =  [Chord.INVERSION_TYPE.Root, Chord.INVERSION_TYPE.First, Chord.INVERSION_TYPE.Second, Chord.INVERSION_TYPE.Third]) {
 
-	var chord_array = []
-	if(model.chords.three_note_types.length == 0 && model.chords.four_note_types.length == 0){
-		log.e("fatal error: generate_random_chord")
-	} else if (model.chords.three_note_types.length > 0 && model.chords.four_note_types.length == 0){
-		chord_array = model.chords.three_note_types
-	}else if (model.chords.three_note_types.length == 0 && model.chords.four_note_types.length > 0){
-		chord_array = model.chords.four_note_types
-	}else {
-		chord_array = model.chords.three_note_types.concat(model.chords.four_note_types);
+		let min = range.min;
+		let max = range.max;
+		function randomInteger(min, max) { // min and max included 
+			return Math.floor(Math.random() * (max - min + 1) + min);
+		}
+		function is_type_three_notes(type) {
+			return type == Chord.TYPE.Major || type == Chord.TYPE.minor || type == Chord.TYPE.Aug || type == Chord.TYPE.Dim; 
+		}
+
+		var random_note = all_notes[randomInteger(min, max)];
+		var play_type = play_types[ randomInteger(0, play_types.length-1) ];
+		var random_chord_type = types[ randomInteger(0, types.length-1) ];
+
+		
+		var inversion = Chord.INVERSION_TYPE.Root;
+		if (is_type_three_notes(random_chord_type)){
+			inversion = three_note_inversion_types[ randomInteger(0, three_note_inversion_types.length-1) ];
+		} else{
+			inversion = four_note_inversion_types[ randomInteger(0, four_note_inversion_types.length-1) ];
+		}
+		return new Chord(random_note, random_chord_type, play_type, inversion);
 	}
-
-	var random_note = generate_random_note(min, max-18);// hack so it doesn't go out of bounds
-	var random_chord_type = chord_array[ randomIntFromInterval(0, chord_array.length-1) ];
-
-	var play_type = model.chords.play_types[ randomIntFromInterval(0, model.chords.play_types.length-1) ];
-	var inversion = INVERSION_TYPE.Root;
-	if (type_is_three_notes(random_chord_type)){
-		inversion = model.chords.three_note_inversion_types[ randomIntFromInterval(0, model.chords.three_note_inversion_types.length-1) ];
-	} else{
-		inversion = model.chords.four_note_inversion_types[ randomIntFromInterval(0, model.chords.four_note_inversion_types.length-1) ];
-	}
-	var random_chord = new Chord(random_note, random_chord_type, play_type, inversion);
-
-	return random_chord;
-}
-
-function generate_chord_with_note(note_name, all_notes){
-
-	var random_chord_type = ALL_CHORD_TYPES[ randomIntFromInterval(0, ALL_CHORD_TYPES.length-1) ];
-	var octave = 1 + randomIntFromInterval(2, 4);// limit to lower register
-	var note = all_notes[note_name.associated_midi_values[octave]];
-
-	var play_type = Chord.PLAY_TYPE.HARMONIC;
-	var inversion = Chord.INVERSION_TYPE.Root;
-	var random_chord = new Chord(note, random_chord_type, play_type, inversion);
-
-	return random_chord;
 }
 
 module.exports = Chord;
