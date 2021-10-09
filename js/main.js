@@ -6,7 +6,7 @@ musicKit.init();
 
 let pianoView = pianoKit({
 	id: 'display_piano',
-	backgroundColor: '#EEE'
+	backgroundColor: '#00000000'
 });
 
 document.getElementById("note_button").onclick = function() { 
