@@ -45,7 +45,8 @@ let interactivePianoView = pianoKit({
 			interactivePianoView.clearNote(note);
 		}
 	},
-	hover: true
+	hover: true,
+	backgroundColor: '#00000000'
 });
 
 new musicKit.MidiListener(
